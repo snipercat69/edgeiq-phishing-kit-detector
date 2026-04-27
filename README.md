@@ -1,81 +1,46 @@
-# 🎣 EdgeIQ Phishing Kit Detector
+# Phishing Kit Detector — CLI Setup
 
-**Detect phishing kit artifacts, brand impersonation, and credential harvesting infrastructure.**
-
-Analyzes live URLs or local HTML dumps to identify phishing kit clones, stolen branding, suspicious form actions, obfuscated JavaScript, and credential harvesting infrastructure.
-
-[![Project Stage](https://img.shields.io/badge/Stage-Beta-blue)](https://edgeiqlabs.com)
-[![Python](https://img.shields.io/badge/Python-3.8+-green)](https://python.org)
-[![License](https://img.shields.io/badge/License-MIT-orange)](LICENSE)
-
----
-
-## What It Does
-
-Detects phishing kit artifacts by analyzing URL structure, HTML content, JavaScript behavior, and infrastructure fingerprints. Identifies brand impersonation, credential harvesting forms, and suspicious redirect chains.
-
-> ⚠️ **Legal Notice:** Only analyze domains you own or have explicit written authorization to audit.
-
----
-
-## Key Features
-
-- **Phishing artifact detection** — form action URLs, hidden fields, autocomplete
-- **Brand impersonation analysis** — detects copied logos, CSS frameworks, imagery
-- **Infrastructure fingerprinting** — shared/free hosting, suspicious TLDs
-- **JavaScript analysis** — credential harvesting scripts, keyloggers, redirects
-- **Stolen branding detection** — fake trust seals, SSL badges
-- **URL structure analysis** — phishing-specific path patterns
-- **JSON export** — structured forensic report
-
----
-
-## Prerequisites
-
-- Python 3.8+
-- `requests` library
-
----
+Detect phishing kit artifacts, brand impersonation, form action URLs, stolen CSS/images, and suspicious page structure. Analyze live phishing pages or offline phishing kit dumps.
 
 ## Installation
 
 ```bash
 git clone https://github.com/snipercat69/edgeiq-phishing-kit-detector.git
 cd edgeiq-phishing-kit-detector
-pip install -r requirements.txt
 ```
-
----
 
 ## Quick Start
 
 ```bash
-# Scan a suspicious URL
-python3 phishing_detector.py --url "https://suspicious-site.com/login"
+# Analyze a suspected phishing URL
+python3 phishing_detector.py --url "https://fake-paypal-login.com"
 
-# Scan a local HTML file
-python3 phishing_detector.py --file ./phishing_page.html
+# Analyze local phishing page (HTML dump)
+python3 phishing_detector.py --file /path/to/phishing_page.html --pro
 
-# JSON forensic report
-python3 phishing_detector.py --url "https://fake-bank.com/" --format json --output report.json
+# Deep scan with brand impersonation check
+python3 phishing_detector.py --url "https://fake-amazon.com" --brands paypal,amazon,apple --pro
+
+# Full analysis + JSON report
+python3 phishing_detector.py --url "https://phishing-site.net" --bundle --output report.json
 ```
 
----
+## Features
 
-## Pricing
+- **Phishing kit artifact detection** — form action URLs, credential capture endpoints, fake login fields
+- **Brand impersonation analysis** — detects use of brand logos, CSS, and imagery
+- **Infrastructure fingerprinting** — shared hosting patterns, free hosting providers, suspicious TLDs
+- **JavaScript analysis** — credential harvesting scripts, redirect chains, keyloggers
+- **Stolen branding elements** — detects references to legitimate brand assets
+- **URL structure analysis** — path patterns common in phishing kits
 
-| Tier | Price | Features |
-|------|-------|----------|
-| **Free** | $0 | 5 scans/month, basic detection |
-| **Lifetime** | $39 one-time | Unlimited scans, full JS analysis, brand detection |
-| **Monthly** | $7/mo | All Lifetime features, billed monthly |
+## ⚠️ Legal Notice
 
----
+- Only analyze domains you own or have explicit written authorization to audit
+- Not for unauthorized reconnaissance of third-party sites
 
-## Support
+## Licensing
 
-Open an issue at: https://github.com/snipercat69/edgeiq-phishing-kit-detector/issues
+Free tier: 5 URL/file scans.
 
----
-
-*Part of EdgeIQ Labs — [edgeiqlabs.com](https://edgeiqlabs.com)*
+Pro ($19/mo) or Bundle ($39/mo): [buy.stripe.com/aFa00l9i3bxrcUs18c7wA0k](https://buy.stripe.com/aFa00l9i3bxrcUs18c7wA0k)
